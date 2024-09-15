@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/provideDetailsFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.kidsquiz.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <argument
+            android:name="player"
+            app:argType="com.example.kidsquiz.models.Player"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="firstTimeUser"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <action
+            android:id="@+id/action_startFragment_to_quizTypeFragment"
+            app:destination="@id/quizTypeFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/quizTypeFragment"
+        android:name="com.example.kidsquiz.fragments.QuizTypeFragment"
+        android:label="fragment_quiz_type"
+        tools:layout="@layout/fragment_quiz_type" >
+        <action
+            android:id="@+id/action_quizTypeFragment_to_quizCategoryFragment"
+            app:destination="@id/quizCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizCategoryFragment"
+        android:name="com.example.kidsquiz.fragments.QuizCategoryFragment"
+        android:label="fragment_quiz_category"
+        tools:layout="@layout/fragment_quiz_category" >
+        <argument
+            android:name="quizType"
+            app:argType="com.example.kidsquiz.models.QuizType"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <argument
+            android:name="clickedBtn"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <argument
+            android:name="singlePlayerQuizType"
+            app:argType="com.example.kidsquiz.models.QuizType"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_quizCategoryFragment_to_questionsFragment"
+            app:destination="@id/questionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsFragment"
+        android:name="com.example.kidsquiz.fragments.QuestionsFragment"
+        android:label="fragment_questions"
+        tools:layout="@layout/fragment_questions" >
+        <argument
+            android:name="category"
+            app:argType="com.example.kidsquiz.models.Category"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <argument
+            android:name="clickedBtn"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <action
+            android:id="@+id/action_questionsFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/provideDetailsFragment"
+        android:name="com.example.kidsquiz.fragments.ProvideDetailsFragment"
+        android:label="ProvideDetailsFragment" >
+        <argument
+            android:name="add_player"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <action
+            android:id="@+id/action_provideDetailsFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiPlayerFragment"
+        android:name="com.example.kidsquiz.fragments.MultiPlayerFragment"
+        android:label="MultiPlayerFragment" >
+        <action
+            android:id="@+id/action_multiPlayerFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_multiPlayerFragment_to_provideDetailsFragment"
+            app:destination="@id/provideDetailsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/singlePlayerFragment"
+        android:name="com.example.kidsquiz.fragments.SinglePlayerFragment"
+        android:label="fragment_single_player"
+        tools:layout="@layout/fragment_single_player" >
+        <action
+            android:id="@+id/action_singlePlayerFragment_to_quizCategoryFragment"
+            app:destination="@id/quizCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.kidsquiz.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_provideDetailsFragment"
+            app:destination="@id/provideDetailsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_multiPlayerFragment"
+            app:destination="@id/multiPlayerFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_multiPlayerFragment2"
+            app:destination="@id/multiPlayerFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_provideDetailsFragment2"
+            app:destination="@id/provideDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.example.kidsquiz.fragments.ScoreFragment"
+        android:label="ScoreFragment" >
+
+        <argument
+            android:name="score"
+            app:argType="integer"
+           />
+        <action
+            android:id="@+id/action_scoreFragment_to_questionsFragment"
+            app:destination="@id/questionsFragment" />
+        <action
+            android:id="@+id/action_scoreFragment_to_quizCategoryFragment"
+            app:destination="@id/quizCategoryFragment" />
+        <action
+            android:id="@+id/action_scoreFragment_to_quizTypeFragment"
+            app:destination="@id/quizTypeFragment" />
+    </fragment>
+
+
+
+</navigation>

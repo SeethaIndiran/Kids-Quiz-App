@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="230dp"
+    android:background="@drawable/gradient_quiz_type"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/quiz_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_quiz_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/birds_and_animals"
+        android:textColor="@color/end_btn"
+        android:gravity="center_horizontal"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quiz_image"
+       />
+
+    <ImageView
+        android:id="@+id/star_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/star"
+        android:contentDescription="@string/name"
+        android:layout_marginTop="10dp"
+       app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_quiz_type"/>
+
+    <TextView
+        android:id="@+id/tv_quiz_counts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_2"
+        android:textColor="@color/end_btn"
+        android:gravity="center_horizontal"
+        android:textSize="23sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toEndOf="@id/star_image"
+        app:layout_constraintTop_toBottomOf="@id/tv_quiz_type"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

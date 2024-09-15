@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.QuizTypeFragment">
+
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/cl_one"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+
+       <TextView
+           android:id="@+id/hello_player"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/hello"
+           android:textSize="30sp"
+           android:textColor="@color/black"
+           android:layout_marginTop="16dp"
+           app:layout_constraintVertical_bias=".5"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent"/>
+
+       <ImageView
+           android:id="@+id/player_image"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           android:layout_marginTop="25dp"
+           android:src="@drawable/ic_baseline_person_24"
+           android:contentDescription="@string/image"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/hello_player"/>
+
+       <TextView
+           android:id="@+id/player_score"
+           android:layout_width="0dp"
+           android:layout_height="60dp"
+           app:layout_constraintWidth_percent=".6"
+           android:text="@string/zeroValTv"
+           android:textColor="@color/white"
+          android:layout_marginTop="7dp"
+           android:layout_marginStart="10dp"
+           android:textSize="25sp"
+           android:gravity="center"
+           android:background="@drawable/gradient_quiz_type"
+           app:layout_constraintStart_toEndOf="@id/player_image"
+           app:layout_constraintTop_toTopOf="@id/player_image"/>
+
+       <ImageView
+           android:id="@+id/star_image"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           android:src="@drawable/star"
+           android:contentDescription="@string/starTv"
+           android:layout_marginStart="10dp"
+           app:layout_constraintStart_toEndOf="@id/player_score"
+           app:layout_constraintTop_toTopOf="@id/player_image"/>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_one"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_player_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
